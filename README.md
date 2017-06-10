@@ -24,6 +24,5 @@ Close the ssh connection
 
 
 - The S3 part of the trigger is done as follows:
-      - The files would be uploaded to `bucket1`, which will be monitored by CloudWatch. 
-      
-      - Once the files reach the threshold of `500` files, then the Lambda function is triggered which initiates the deployment process, and move the files to a new bucket and deletes them in this bucket.
+  - The files would be uploaded to `bucket1`, which will be monitored by CloudWatch.
+  - Once the number of files in s3 Source bucket reach the threshold of `500` files, then the Lambda function is triggered which initiates the deployment process, and move the files to a new bucket and deletes them in this bucket.
