@@ -13,13 +13,17 @@ Git repo sending webhooks through SNS to a lambda function.
  For every commit, Lambda fucntion gets invoked.
 
 -> Into the Lambda function check the condition if('mldeploy' in parsed_message['commits'][0]['message']): then execute the rest of the code.
+
 -> Create a boto3 session and then spins up a t2.micro instance with an ubuntu image.
-SSH into the instance, run some update and installation commands.
+   SSH into the instance, run some update and installation commands.
+
 -> Run the ansible-playbook, into which clone a repo containing the newly deployed script ('MLIris' repo) and run it to find accuracy.
+
 -> Read latest accuracy value from DynamoDB and if 'New Accuracy' > 'Latest Accuracy' then Write the new value to DynamoDB.
 Close the ssh connection
 
 
 - The S3 part of the trigger is done as follows:
       - The files would be uploaded to `bucket1`, which will be monitored by CloudWatch. 
+      
       - Once the files reach the threshold of `500` files, then the Lambda function is triggered which initiates the deployment process, and move the files to a new bucket and deletes them in this bucket.
