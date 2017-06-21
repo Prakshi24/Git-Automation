@@ -1,0 +1,59 @@
+From SNS:
+created[boolean]: Repo created or not?
+    "deleted"[boolean]: Repo deleted or not?
+    "forced"[boolean]: Is the commit forced?
+    "compare":
+
+"commits":{
+    "id": gives id of the commit,
+    "tree_id":
+    "distinct": true,
+    "message": specifies the action taken. e.g. Merge pull
+                request,created a file etc.
+    "timestamp": "2017-05-25T17:49:42+05:30",
+    "url": "url of the commit",
+    "author": {"name","email","username"},
+    "committer": {"name"[string],"email"[string]"username"},
+    "added"[string]: name of the files/folders added either
+                    individually or through a pull request.
+    "removed"[string]: name of the file/folder removed in a commit.
+    "modified": name of the files modified in a commit.
+    }
+
+"head_commit": { #info about head commit
+    "id"[string]: gives id of the commit,
+    "tree_id"[string]: id,
+    "distinct"[boolean]: true,
+    "message"[string]: action taken on the repository as a head commit.
+    "timestamp"[time]: timestamp of the comit,
+    "url": commit url,
+    "author": {"name","email","username"},
+    "committer": {"name"[string],"email"[string]"username"},
+    "added"[string]: name of the files/folders added either
+                    individually or through a pull request.
+    "removed"[string]: name of the file/folder removed in a commit.
+    "modified"[string]: name of the files modified in a commit.
+    },
+
+"repository": { 
+    # details about repository
+    "id"[int]: repo id,
+    "name": repo name,
+    "full_name": full repo name,
+    "owner": {this block contains details of repository owner.for
+                example:-name,email,login id}
+    "private"[boolean]: is the repo private oe not,
+    "html_url": "https://github.com/Prakshi24/Google-Cloud",
+    "description": " To set up a Google instance using Terraform having Wordpress installed in it.",
+    "fork": false,
+    #contains many more details 
+    },
+
+"pusher": {
+        "name": "Prakshi24",
+        "email": "yprakshi@gmail.com"
+        #contains many more details
+    },
+
+    "sender": { #sender details}
+}
